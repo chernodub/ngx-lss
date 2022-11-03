@@ -1,14 +1,27 @@
 {
   "name": "ngx-lss",
   "version": "0.0.0",
+  "author": {
+    "email": "chernodubv@gmail.com",
+    "name": "Viktor Chernodub",
+    "url": "https://chernodub.dev"
+  },
+  "keywords": [
+    "typescript",
+    "angular",
+    "storage",
+    "local",
+    "local-storage"
+  ],
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "cp README.md projects/ngx-lss/ && ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ci:test": "npx ng test --no-watch --no-progress --browsers=ChromeHeadlessCI"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
     "@angular/common": "^14.2.0",
