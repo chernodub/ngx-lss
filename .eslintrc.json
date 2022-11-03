@@ -1,0 +1,83 @@
+{
+  "root": true,
+  "extends": ["@chernodub/eslint-config"],
+  "plugins": ["rxjs"],
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "lib",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "lib",
+            "style": "kebab-case"
+          }
+        ],
+        "rxjs/no-exposed-subjects": ["error", { "allowProtected": true }],
+        "rxjs/finnish": [
+          "error",
+          {
+            "functions": false,
+            "methods": false,
+            "names": {
+              "^(canActivate|canActivateChild|canDeactivate|canLoad|intercept|resolve|validate|.*Subject)$": false
+            },
+            "parameters": true,
+            "properties": true,
+            "strict": true,
+            "types": {
+              "^EventEmitter$": false
+            },
+            "variables": true
+          }
+        ],
+        "rxjs/no-ignored-replay-buffer": "error",
+        "rxjs/no-internal": "error",
+        "rxjs/no-nested-subscribe": "error",
+        "rxjs/no-unbound-methods": "error",
+        "rxjs/throw-error": "error",
+        "rxjs/no-async-subscribe": "error",
+        "rxjs/no-create": "error",
+        "rxjs/no-ignored-observable": "error",
+        "rxjs/no-implicit-any-catch": "error",
+        "rxjs/no-index": "error",
+        "rxjs/no-sharereplay": [
+          "error",
+          {
+            "allowConfig": true
+          }
+        ],
+        "rxjs/no-subclass": "error",
+        "rxjs/no-unsafe-takeuntil": [
+          "error",
+          {
+            "alias": ["untilDestroyed"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}
