@@ -1,19 +1,20 @@
 import { fakeAsync, flush } from '@angular/core/testing';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator';
 import { Observer, Subscription } from 'rxjs';
-import { LocalStorageService } from './local-storage.service';
+
+import { NgxLocalStorageService } from './ngx-local-storage.service';
 
 /** Creates observer spy object. */
 export function createObserverSpy<T>(): jasmine.SpyObj<Observer<T>> {
   return jasmine.createSpyObj('observer', ['next', 'error', 'complete']);
 }
 
-describe('LocalStorageService', () => {
-  let spectator: SpectatorService<LocalStorageService>;
+describe('NgxLocalStorageService', () => {
+  let spectator: SpectatorService<NgxLocalStorageService>;
   let subs: Subscription[];
 
   const createService = createServiceFactory({
-    service: LocalStorageService,
+    service: NgxLocalStorageService,
   });
 
   beforeEach(() => {

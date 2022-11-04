@@ -26,16 +26,16 @@ npm i ngx-lss
 
 ## Setting up
 
-1. Import `LocalStorageModule` to root module of your app
+1. Import `NgxLocalStorageModule` to root module of your app
 
   ```typescript
-  import { LocalStorageModule } from 'ngx-lss';
+  import { NgxLocalStorageModule } from 'ngx-lss';
 
   @NgModule({
     // ...
     imports: [
       // ...
-      LocalStorageModule,
+      NgxLocalStorageModule,
     ]
   })
   export class AppModule { }
@@ -45,7 +45,7 @@ npm i ngx-lss
 
   ```typescript
   import { Component } from '@angular/core';
-  import { LocalStorageService } from 'ngx-lss';
+  import { NgxLocalStorageService } from 'ngx-lss';
 
   @Component({
     selector: 'app-root',
@@ -54,7 +54,7 @@ npm i ngx-lss
   })
   export class AppComponent {
     public constructor(
-      private readonly localStorageService: LocalStorageService,
+      private readonly NgxLocalStorageService: NgxLocalStorageService,
    ) {
       // ...
     }
@@ -70,7 +70,7 @@ npm i ngx-lss
 
 ```ts
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from 'ngx-lss';
+import { NgxLocalStorageService } from 'ngx-lss';
 import { map, Observable } from 'rxjs';
 
 import { UserSecret } from '../models/user-secret';
@@ -84,7 +84,7 @@ export class UserSecretStorageService {
   public readonly currentSecret$: Observable<UserSecret | null>;
 
   public constructor(
-    private readonly storageService: LocalStorageService,
+    private readonly storageService: NgxLocalStorageService,
   ) {
     this.currentSecret$ = this.storageService.get<UserSecret>(USER_SECRET_STORAGE_KEY);
   }
@@ -110,7 +110,7 @@ export class UserSecretStorageService {
 
 ```typescript
 import { Component } from '@angular/core';
-import { LocalStorageService } from 'ngx-lss';
+import { NgxLocalStorageService } from 'ngx-lss';
 
 const COUNTER_KEY = 'counter';
 
@@ -125,7 +125,7 @@ export class AppComponent {
   public readonly counter$: Observable<number | null>;
 
   public constructor(
-    private readonly storage: LocalStorageService,
+    private readonly storage: NgxLocalStorageService,
   ) {
     this.counter$ = this.storage.get<number>(COUNTER_KEY);
   }

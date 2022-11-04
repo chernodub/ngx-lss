@@ -7,7 +7,7 @@ import { WINDOW } from './utils/window-token';
  * Angular adapter for the local storage.
  */
 @Injectable()
-export class LocalStorageService {
+export class NgxLocalStorageService {
   /** Emits the key of the value changed in the local storage. */
   private readonly valueChangedSubject = new Subject<string>();
 
