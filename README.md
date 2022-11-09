@@ -35,7 +35,7 @@ npm i ngx-lss
     // ...
     imports: [
       // ...
-      NgxLocalStorageModule,
+      NgxLocalStorageModule.forRoot(),
     ]
   })
   export class AppModule { }
