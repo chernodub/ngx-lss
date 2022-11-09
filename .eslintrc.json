@@ -49,6 +49,7 @@
             "variables": true
           }
         ],
+        "jsdoc/require-jsdoc": "off",
         "rxjs/no-ignored-replay-buffer": "error",
         "rxjs/no-internal": "error",
         "rxjs/no-nested-subscribe": "error",
