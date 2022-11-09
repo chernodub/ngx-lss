@@ -7,12 +7,12 @@ export const FORROOT_GUARD_TOKEN = new InjectionToken<void>('ROUTER_FORROOT_GUAR
 type GuardedResult = boolean;
 
 const MULTIPLE_FORROT_IMPORTS_ERROR =
-  `The NgxLocalStorageModule was provided more than once. This could happen when 'forRoot' is used outside of the root injector.`;
+  `The NgxLocalStorageModule was imported more than once. This could happen if 'forRoot' is used outside of the root injector.`;
 const INITIALIZED_WITHOUT_FORROOT_ERROR = `NgxLocalStorageModule must be imported via 'forRoot()' call in your root module.`;
 
 /**
  * Module providing local storage adapter service.
- * Must be provided once via static `forRoot()` method in order to prevent possible issues with multiple instances of the storage service.
+ * Must be imported once via static `forRoot()` method in order to prevent possible issues with multiple instances of the storage service.
  */
 @NgModule()
 export class NgxLocalStorageModule {
