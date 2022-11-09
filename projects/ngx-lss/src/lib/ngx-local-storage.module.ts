@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Inject, InjectionToken, ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 
 import { NgxLocalStorageService } from './ngx-local-storage.service';
