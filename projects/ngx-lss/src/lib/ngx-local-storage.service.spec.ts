@@ -44,6 +44,21 @@ describe('NgxLocalStorageService', () => {
       expect(resultValues).toContain(secondData);
     }));
 
+    it('should return latest value at the time of subscription', () => {
+      const testKey = 'some-key';
+      const latestDummyData = { someNewData: 12345 };
+
+      const resultValues: unknown[] = [];
+
+      spectator.service.save(testKey, { someData: 123 }).subscribe();
+      const data$ = spectator.service.get(testKey);
+      spectator.service.save(testKey, latestDummyData).subscribe();
+      data$.subscribe(data => resultValues.push(data));
+
+      expect(resultValues.length).toBe(1);
+      expect(resultValues).toContain(latestDummyData);
+    });
+
     it('returns initial null in case storage is empty', () => {
       const key = 'some-non-existent-key';
       const observerSpy = createObserverSpy();

@@ -38,9 +38,14 @@ export class NgxLocalStorageService {
    * @param key Unique key.
    */
   public get<T = unknown>(key: string): Observable<T | null> {
-    return this.watchStorageChangeByKey(key).pipe(
+    const initialValue$ = defer(() => of(this.obtainFromStorageByKey<T>(key)));
+    const valueChanges$ = this.watchStorageChangeByKey(key).pipe(
       map(() => this.obtainFromStorageByKey<T>(key)),
-      startWith(this.obtainFromStorageByKey<T>(key)),
+    );
+    return merge(
+      initialValue$,
+      valueChanges$,
+    ).pipe(
       shareReplay({ refCount: true, bufferSize: 1 }),
     );
   }
