@@ -6,6 +6,7 @@
     "name": "Viktor Chernodub",
     "url": "https://chernodub.dev"
   },
+  "description": "Reactive adapter for browser's `localStoarge` API",
   "keywords": [
     "typescript",
     "angular",
