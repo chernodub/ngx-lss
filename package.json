@@ -6,6 +6,9 @@
     "name": "Viktor Chernodub",
     "url": "https://chernodub.dev"
   },
+  "engines": {
+    "node": "18.12.1"
+  },
   "description": "Reactive adapter for browser's `localStoarge` API",
   "keywords": [
     "typescript",
@@ -64,5 +67,8 @@
     "ng-packagr": "^14.2.0",
     "release-it": "*",
     "typescript": "~4.7.2"
+  },
+  "volta": {
+    "node": "18.12.1"
   }
 }
