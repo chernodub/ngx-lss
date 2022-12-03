@@ -62,7 +62,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "lint-staged": "^13.0.3",
     "ng-packagr": "^15.0.1",
     "release-it": "*",
     "typescript": "~4.8.4"
