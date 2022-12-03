@@ -1,16 +1,25 @@
 {
   "name": "ngx-lss",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": {
     "email": "chernodubv@gmail.com",
     "name": "Viktor Chernodub",
     "url": "https://chernodub.dev"
   },
   "peerDependencies": {
-    "@angular/common": "^14.2.0",
-    "@angular/core": "^14.2.0"
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
-  }
+    "tslib": "^2.4.0"
+  },
+  "description": "Reactive adapter for browser's `localStoarge` API",
+  "keywords": [
+    "typescript",
+    "angular",
+    "storage",
+    "local",
+    "local-storage"
+  ],
+  "license": "MIT"
 }
