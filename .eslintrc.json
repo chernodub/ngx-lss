@@ -1,6 +1,5 @@
 {
   "root": true,
-  "extends": ["@chernodub/eslint-config"],
   "plugins": ["rxjs"],
   "ignorePatterns": ["projects/**/*"],
   "overrides": [

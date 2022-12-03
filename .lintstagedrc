@@ -1,3 +1,0 @@
-{
-  "projects/**/*.{ts}": "eslint --cache --fix"
-}
