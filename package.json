@@ -51,7 +51,6 @@
     "@angular-eslint/template-parser": "14.1.2",
     "@angular/cli": "~15.0.2",
     "@angular/compiler-cli": "^15.0.2",
-    "@chernodub/eslint-config": "^2.1.0",
     "@types/jasmine": "~4.0.0",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
